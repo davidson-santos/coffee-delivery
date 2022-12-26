@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const HeaderBox = styled.header`
     display: block;
+    color: ${props => props.theme.background};
     /* background: blue; */
 
     nav {
