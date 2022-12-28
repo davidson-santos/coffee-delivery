@@ -1,4 +1,4 @@
-import logo from '../assets/logo.svg'
+import logo from '../../assets/logo.svg'
 import { HeaderBox } from './styles'
 import {MapPin,ShoppingCart} from 'phosphor-react'
 

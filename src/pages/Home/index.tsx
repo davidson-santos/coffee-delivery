@@ -1,10 +1,11 @@
 import { HomeBanner, BannerText, TextList, BannerImage, HomeContainer, CoffeeMenu } from './styles'
-import background from '../../assets/background-blur.svg'
+// import background from '../../assets/background-blur.svg'
 import coffeeIcon from  '../../assets/list-coffee.svg'
 import buyIcon from  '../../assets/list-buy.svg'
 import timeIcon from  '../../assets/list-time.svg'
 import packageIcon from  '../../assets/list-package.svg'
 import bannerImage from  '../../assets/banner-image.svg'
+import { ProductCard } from '../../components/ProductCard'
 
 
 export function Home(){
@@ -45,6 +46,7 @@ export function Home(){
                 <h1>Nossos cafés</h1>
 
                 <div className="cafeCard"></div>
+                <ProductCard />
             </CoffeeMenu>
         </HomeContainer>
     )

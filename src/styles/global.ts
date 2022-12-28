@@ -19,7 +19,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body, header {
-        padding: 0 10rem;
+        /* padding: 0 10rem; */
 
     }
 
