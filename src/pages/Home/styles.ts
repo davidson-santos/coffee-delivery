@@ -65,6 +65,7 @@ export const CoffeeMenu = styled.div`
     padding: 2rem 10rem 10rem;
 
     h1 {
+        line-height: 130%;
         margin-bottom: 3.375rem;
     }
 `

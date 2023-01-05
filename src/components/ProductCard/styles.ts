@@ -52,16 +52,36 @@ export const CardContainer = styled.div`
 export const PriceBar = styled.div`
     display: flex;
     align-items: center;
+    
+
+    button {
+        border: 0;
+    }
+
+    > button {
+        display: flex;
+        background: ${props => props.theme['purple-dark']};
+        color: ${props => props.theme['base-card']};
+        border-radius: 6px;
+        padding: 0.5rem;
+        margin-left: 0.5rem;
+    }
 `
+
 export const Price = styled.div`
     display: flex;
-    justify-content: baseline;
-    align-items: center;
+    /* justify-content: flex-end; */
+    align-items: flex-end;
+    margin-right: 1.4375rem;
 
     font-size: 0.875rem;
 
+    > p {
+        line-height: 40%;
+    } 
 
-    p {
+    p + p{
+        margin-left: 0.25rem;
         font-family: "Baloo 2", sans-serif;
         font-weight: 800;
         font-size: 1.5rem;
@@ -77,15 +97,13 @@ export const CountButtons = styled.div`
     background: ${props => props.theme['base-button']};
     gap: 0.25rem;
     padding: 0.5rem;
+    border-radius: 6px;
 
     button {
         display: flex;
         justify-content: center;
         align-items: center;
-        /* height: 0.875rem;
-        width: 0.875rem; */
         box-sizing: content-box;
-        border: 0;
         background: none;
         color: ${props => props.theme.purple};
     }

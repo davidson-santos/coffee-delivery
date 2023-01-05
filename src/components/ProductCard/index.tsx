@@ -1,14 +1,16 @@
 import { CardContainer, PriceBar, Price, CountButtons } from './styles'
-import {Minus, Plus} from 'phosphor-react'
+import {Minus, Plus, ShoppingCartSimple} from 'phosphor-react'
+import coffee from '../../assets/coffees/expresso-tradicional.png'
+
 export function ProductCard() {
     return (
         <CardContainer>
-            <img src="" alt="" />
+            <img src={coffee} alt="" />
             <span>tradicional</span>
             <h2>Expresso Tradicional</h2>
             <p>O tradicional café feito com água quente e grãos moídos</p>
             <PriceBar>
-                <Price>R$<p>9,90</p></Price>
+                <Price><p>R$</p><p>9,90</p></Price>
                 <CountButtons>
                     <button>
                         <Minus size={14} weight='bold'/>
@@ -18,7 +20,7 @@ export function ProductCard() {
                         <Plus size={14} weight='bold'/>
                     </button>
                 </CountButtons>
-                <button></button>
+                <button><ShoppingCartSimple size={22} weight='fill'/></button>
             </PriceBar>
         </CardContainer>
     )
