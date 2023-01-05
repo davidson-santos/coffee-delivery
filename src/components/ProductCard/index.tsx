@@ -1,5 +1,5 @@
 import { CardContainer, PriceBar, Price, CountButtons } from './styles'
-
+import {Minus, Plus} from 'phosphor-react'
 export function ProductCard() {
     return (
         <CardContainer>
@@ -10,8 +10,13 @@ export function ProductCard() {
             <PriceBar>
                 <Price>R$<p>9,90</p></Price>
                 <CountButtons>
-                    <button></button>
-                    <button></button>
+                    <button>
+                        <Minus size={14} weight='bold'/>
+                    </button>
+                    <p>1</p>
+                    <button>
+                        <Plus size={14} weight='bold'/>
+                    </button>
                 </CountButtons>
                 <button></button>
             </PriceBar>

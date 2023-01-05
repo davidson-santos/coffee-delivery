@@ -76,11 +76,25 @@ export const CountButtons = styled.div`
     align-items: center;
     background: ${props => props.theme['base-button']};
     gap: 0.25rem;
+    padding: 0.5rem;
 
     button {
-        height: 0.875rem;
-        width: 0.875rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* height: 0.875rem;
+        width: 0.875rem; */
+        box-sizing: content-box;
         border: 0;
-        /* background: none; */
+        background: none;
+        color: ${props => props.theme.purple};
+    }
+
+    p {
+        text-align: center;
+        align-self: flex-end;
+        width: 20px;
+        height: 21px;
+        color: ${props => props.theme['base-title']};
     }
 `
