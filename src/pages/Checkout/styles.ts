@@ -10,6 +10,7 @@ export const CheckoutContainer = styled.main`
         justify-content: space-between;
         gap: 2rem;
     }
+
     h1 {
         color: ${(props) => props.theme['base-subtitle']};
         font-size: 1.125rem;
@@ -22,7 +23,9 @@ export const CheckoutContainer = styled.main`
 
 
 export const  OrderContainer = styled.div`
-     
+    > h1 {
+        margin-left: 1.5rem;
+    }
 `
 
 const  BaseCard = styled.div`
@@ -38,13 +41,7 @@ const  BaseCard = styled.div`
     }
 `
 
-export const  Address = styled(BaseCard)`
-    margin-bottom: 0.75rem;
-    
-    svg {
-        color: ${(props) => props.theme['yellow-dark']};
-    }
-
+export const  CardTitle = styled.div`
     span {
         display: flex;
         align-items: flex-start;
@@ -82,7 +79,12 @@ export const  Address = styled(BaseCard)`
     }
 `
 
-export const  Payment = styled(BaseCard)``
+export const  Address = styled(BaseCard)`
+    margin-bottom: 0.75rem;
+    svg {
+        color: ${(props) => props.theme['yellow-dark']};
+    }
+`
 
 export const  CartContainer = styled.div`
 `
@@ -92,6 +94,78 @@ export const  Cart = styled(BaseCard)`
 
 `
 
-export const BaseInput = styled.input``
+export const  InputGrid = styled.div`
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    row-gap: 1rem;
 
+    span {
+        display: flex;
+        gap: 0.75rem;
+    }
+`
 
+const BaseInput = styled.input`
+    height: 2.625rem;
+    background: ${(props) => props.theme['base-input']};
+    border: 1px solid ${(props) => props.theme['base-button']};
+    border-radius: 4px;
+    padding: 0.75rem;
+    color: ${(props) => props.theme['base-text']};
+    font-size: 0.875rem;
+
+    ::placeholder {
+        color: ${(props) => props.theme['base-label']};
+    }
+`
+
+export const CEPInput = styled(BaseInput)`
+    width: 12.5rem;
+`
+
+export const StreetInput = styled(BaseInput)``
+
+export const NumberInput = styled(BaseInput)`
+    width: 12.5rem;
+`
+
+export const ComplementInput = styled(BaseInput)`
+    width: calc(100% - (12.5rem + 0.75rem));
+`
+
+export const DistrictInput = styled(BaseInput)`
+    width: 12.5rem;
+`
+
+export const CityInput = styled(BaseInput)`
+    width: calc(100% - (12.5rem + 0.75rem*2 + 3.75rem));
+    min-width: 5rem;
+`
+
+export const UFInput = styled(BaseInput)`
+    width: 3.75rem;
+`
+
+export const  Payment = styled(BaseCard)`
+    svg {
+        color: ${(props) => props.theme.purple};
+    }
+`
+
+export const PayOptions = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.75rem;
+`
+
+export const PayButton = styled.button`
+    border: 0;
+    height: 3.1875rem;
+    background: ${(props) => props.theme['base-button']};
+    padding: 1rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    line-height: 160%;
+    text-transform: uppercase;
+    color: ${(props) => props.theme['base-text']};
+`
