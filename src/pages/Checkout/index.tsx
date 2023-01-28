@@ -17,9 +17,9 @@ import {
     PayOptions,
     PayButton
 } from "./styles";
-import { FormProvider, useForm } from 'react-hook-form'
-import { useState } from "react";
-import { MapPinLine, CurrencyDollar } from 'phosphor-react'
+// import { FormProvider, useForm } from 'react-hook-form'
+// import { useState } from "react";
+import { MapPinLine, CurrencyDollar, CreditCard, Bank, Money } from 'phosphor-react'
 
 export function Checkout(){
 
@@ -66,9 +66,18 @@ export function Checkout(){
                                 </span>
                             </span>
                             <PayOptions>
-                                <PayButton>CARTÃO DE CRÉDITO</PayButton>
-                                <PayButton>CARTÃO DE DÉBITO</PayButton>
-                                <PayButton>DINHEIRO</PayButton>
+                                <PayButton>
+                                    <CreditCard size={16}/>
+                                    <p>CARTÃO DE CRÉDITO</p>
+                                </PayButton>
+                                <PayButton>
+                                    <Bank size={16}/>
+                                    <p>CARTÃO DE DÉBITO</p>
+                                </PayButton>
+                                <PayButton>
+                                    <Money size={16}/>
+                                    <p>DINHEIRO</p>
+                                </PayButton>
                             </PayOptions>
                         </CardTitle>
                     </Payment>

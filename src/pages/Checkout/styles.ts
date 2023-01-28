@@ -159,13 +159,20 @@ export const PayOptions = styled.div`
 `
 
 export const PayButton = styled.button`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
     border: 0;
     height: 3.1875rem;
+    border-radius: 6px;
     background: ${(props) => props.theme['base-button']};
     padding: 1rem;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    line-height: 160%;
-    text-transform: uppercase;
     color: ${(props) => props.theme['base-text']};
+
+    p {
+        font-size: 0.75rem;
+        line-height: 160%;
+        text-transform: uppercase;
+    }
 `
