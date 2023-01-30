@@ -15,4 +15,5 @@ export const defaultTheme = {
     'yellow-dark': '#c47f17',
     'yellow': '#dbac2c',
     'yellow-light': '#f1e9c9',
+    'gradient' : 'linear-gradient(102.89deg, #DBAC2C 2.61%, #8047F8 98.76%)',
 }
