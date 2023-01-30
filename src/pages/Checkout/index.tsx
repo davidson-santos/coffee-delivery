@@ -15,11 +15,20 @@ import {
     UFInput,
     CardTitle,
     PayOptions,
-    PayButton
+    PayButton,
+    Price,
+    ItemContainer,
+    Item,
+    CountButtons,
+    RemoveButton,
+    PContainer
 } from "./styles";
 // import { FormProvider, useForm } from 'react-hook-form'
 // import { useState } from "react";
-import { MapPinLine, CurrencyDollar, CreditCard, Bank, Money } from 'phosphor-react'
+import { MapPinLine, CurrencyDollar, CreditCard, Bank, Money, Minus, Plus, Trash } from 'phosphor-react'
+import expresso from '../../assets/coffees/expresso-tradicional.png'
+import latte from '../../assets/coffees/latte.png'
+
 
 export function Checkout(){
 
@@ -84,7 +93,83 @@ export function Checkout(){
                 </OrderContainer>
                 <CartContainer>
                     <h1>Cafés selecionados</h1>
-                    <Cart></Cart>
+                    <Cart>
+                        <ItemContainer>
+                            <Item>
+                                <span>
+                                    <img src={expresso} alt="" />
+                                    <span>
+                                        <span>
+                                            <p>Expresso Tradicional</p>
+                                            <p>R$ 9,90</p>
+                                        </span>
+                                        <CountButtons>
+                                            <button>
+                                                <Minus size={14} weight='bold'/>
+                                            </button>
+                                            <PContainer>
+                                                <p>1</p>
+                                            </PContainer>
+                                            <button>
+                                                <Plus size={14} weight='bold'/>
+                                            </button>
+                                        </CountButtons>
+                                        <RemoveButton>
+                                            <Trash size={16}/>
+                                            <p>Remover</p>
+                                        </RemoveButton>
+                                    </span>
+                                </span>
+                            </Item>
+                            <hr />
+                        </ItemContainer>
+
+                        <ItemContainer>
+                            <Item>
+                                <span>
+                                    <img src={latte} alt="" />
+                                    <span>
+                                        <span>
+                                            <p>Latte</p>
+                                            <p>R$ 9,90</p>
+                                        </span>
+                                        <CountButtons>
+                                            <button>
+                                                <Minus size={14} weight='bold'/>
+                                            </button>
+                                            <PContainer>
+                                                <p>1</p>
+                                            </PContainer>
+                                            <button>
+                                                <Plus size={14} weight='bold'/>
+                                            </button>
+                                        </CountButtons>
+                                        <RemoveButton>
+                                            <Trash size={16}/>
+                                            <p>Remover</p>
+                                        </RemoveButton>
+                                    </span>
+                                </span>
+                            </Item>
+                            <hr />
+                        </ItemContainer>
+
+                        <Price>
+                            <span>
+                                <p>Total de itens</p>
+                                <p>R$ 29,70</p>
+                            </span>
+                            <span>
+                                <p>Entrega</p>
+                                <p>R$ 3,50</p>
+                            </span>
+                            <span>
+                                <h2>Total</h2>
+                                <h2>R$ 33,20</h2>
+                            </span>
+                        </Price>
+                        <button><p>CONFIRMAR PEDIDO</p></button>
+                    </Cart>
                 </CartContainer>
             </form>
 

@@ -23,9 +23,7 @@ export const CheckoutContainer = styled.main`
 
 
 export const  OrderContainer = styled.div`
-    > h1 {
-        margin-left: 1.5rem;
-    }
+
 `
 
 const  BaseCard = styled.div`
@@ -84,14 +82,6 @@ export const  Address = styled(BaseCard)`
     svg {
         color: ${(props) => props.theme['yellow-dark']};
     }
-`
-
-export const  CartContainer = styled.div`
-`
-
-export const  Cart = styled(BaseCard)`
-    background: blue;
-
 `
 
 export const  InputGrid = styled.div`
@@ -174,5 +164,167 @@ export const PayButton = styled.button`
         font-size: 0.75rem;
         line-height: 160%;
         text-transform: uppercase;
+    }
+`
+
+export const  CartContainer = styled.div`
+`
+
+export const  Cart = styled(BaseCard)`
+    border-radius: 6px 44px;
+    padding: 2.5rem;
+
+    button {
+        width: 100%;
+        height: 2.875rem;
+        background: ${(props) => props.theme.yellow};
+        border-radius: 6px;
+        border: 0;
+        
+        p {
+            color: ${(props) => props.theme.white};
+            font-weight: 700;
+            line-height: 160%;
+        }
+
+    }
+`
+
+export const  Price = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+
+    span {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    p {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 130%;
+    }
+
+    p + p {
+        font-size: 1rem;
+    }
+
+    h2 {
+
+    }
+`
+
+export const ItemContainer = styled.div`
+    width: 100%;
+
+    hr {
+        border: 1px solid ${(props) => props.theme['base-button']};
+        margin: 1.5rem 0;
+    }
+`
+
+export const Item = styled.div`
+    span {
+        width: 100%;
+        display: flex;
+    }
+
+    img {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    > span {
+        gap: 1.25rem;
+        >span {
+            display: initial;
+
+            > span {
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+
+            p {
+                font-size: 1rem;
+                font-weight: 400;
+
+                color: ${(props) => props.theme['base-subtitle']};
+            }
+
+            p + p {
+                font-weight: 700;
+                color: ${(props) => props.theme['base-text']};
+            }
+
+        }
+        }
+    }
+
+    /* span > span > span {
+            display: flex;
+            width: 300px;
+            justify-content: space-between;
+        } */
+
+`
+
+const BaseButton = styled.div`
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: ${props => props.theme['base-button']};
+    gap: 0.25rem;
+    padding: 0 0.5rem;
+    border-radius: 6px;
+    height: 2rem;
+    width: fit-content;
+    margin-right: 0.5rem;
+`
+
+export const CountButtons = styled(BaseButton)`
+    svg {
+        margin: 0;
+        border: 0;
+    }
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: none;
+        color: ${props => props.theme.purple};
+    }
+
+    p {
+        display: inline-block;
+        text-align: center;
+        color: ${props => props.theme['base-title']};
+    }
+`
+
+export const PContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    min-width: 1.25rem;
+`
+
+export const RemoveButton = styled(BaseButton)`
+    gap: 0.25rem;
+    svg {
+        color: ${props => props.theme.purple};
+    }
+
+    p {
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 0.75rem;
+        line-height: 160%;
+        color: ${props => props.theme['base-title']};
     }
 `
