@@ -16,6 +16,12 @@ export const HeaderBox = styled.header`
         padding: 2rem 10rem;
     }
 
+    a {
+        text-decoration: none;
+        margin: 0;
+        border: 0;
+    }
+
     nav span{
         display: flex;
         align-items: center;
@@ -39,7 +45,7 @@ export const HeaderBox = styled.header`
         color: ${props => props.theme['purple-dark']};
     }
 
-    nav span button + button{
+    nav span a > button{
         border: 0;
         padding: 0.5rem;
         line-height: 0;
