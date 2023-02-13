@@ -5,15 +5,17 @@ import { Header } from './components/Header'
 import { Home } from './pages/Home'
 import { Checkout } from './pages/Checkout'
 import { OrderFinished } from './pages/OrderFinished'
+import {BrowserRouter} from 'react-router-dom'
+import { Router } from './Router'
 
 export function App() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
-      <Header />
-      {/* <Home /> */}
-      {/* <Checkout /> */}
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
       <OrderFinished />
     </ThemeProvider>
   )
