@@ -1,14 +1,22 @@
-import { HomeBanner, BannerText, TextList, BannerImage, HomeContainer, CoffeeMenu } from './styles'
+import { HomeBanner, BannerText, TextList, BannerImage, HomeContainer, CoffeeMenu, CoffeeMenuProducts } from './styles'
 // import background from '../../assets/background-blur.svg'
 import coffeeIcon from  '../../assets/list-coffee.svg'
 import buyIcon from  '../../assets/list-buy.svg'
 import timeIcon from  '../../assets/list-time.svg'
 import packageIcon from  '../../assets/list-package.svg'
 import bannerImage from  '../../assets/banner-image.svg'
-import { ProductCard } from '../../components/ProductCard'
+import { ProductCard, ProductCardProps } from '../../components/ProductCard'
+import { coffeList } from './coffeList'
 
 
 export function Home(){
+
+    
+
+    function listProducts(list: ProductCardProps[]){
+
+    }
+
     return (
         <HomeContainer>
             <HomeBanner>
@@ -44,9 +52,21 @@ export function Home(){
             </HomeBanner>
             <CoffeeMenu>
                 <h1>Nossos cafés</h1>
-
-                <div className="cafeCard"></div>
-                <ProductCard />
+                <CoffeeMenuProducts>
+                {
+                    coffeList.map(coffeeItem => {
+                        return(
+                            <ProductCard
+                                category={coffeeItem.category}
+                                description={coffeeItem.description}
+                                image={coffeeItem.image}
+                                name={coffeeItem.name}
+                                price={coffeeItem.price}
+                            />
+                        )
+                    })
+                }
+                </CoffeeMenuProducts>
             </CoffeeMenu>
         </HomeContainer>
     )

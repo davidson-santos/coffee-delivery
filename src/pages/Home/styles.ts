@@ -62,10 +62,27 @@ export const BannerImage = styled.div`
 `
 
 export const CoffeeMenu = styled.div`
-    padding: 2rem 10rem 10rem;
+    margin: 2rem 10rem 10rem;
+    /* width: 100%; */
+    /* background: red; */
 
     h1 {
         line-height: 130%;
         margin-bottom: 3.375rem;
     }
+`
+
+export const CoffeeMenuProducts = styled.div`
+    width: 100%;
+    /* background: blue; */
+    display: grid;
+    margin: auto;
+    /* justify-content: space-between; */
+    /* grid-gap: 2.5rem 2rem; */
+    /* flex: 1; */
+    /* flex-wrap: wrap; */
+    /* flex */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* grid: 1; */
+    /* grid-auto-flow: row; */
 `

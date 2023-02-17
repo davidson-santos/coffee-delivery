@@ -52,15 +52,27 @@ export function Checkout(){
                             </span>
                         </CardTitle>
                         <InputGrid>
+                            <label htmlFor="cep" hidden>CEP</label>
                             <CEPInput id="cep" type="number" placeholder="CEP"/>
+
+                            <label htmlFor="street" hidden>Rua</label>
                             <StreetInput id="street" placeholder="Rua"/>
+
                             <span>
+                                <label htmlFor="houseNumber" hidden>Número da casa</label>
                                 <NumberInput id="houseNumber" placeholder="Número"/>
+
+                                <label htmlFor="complement" hidden>Complemento</label>
                                 <ComplementInput id="complement" placeholder="Complemento"/>
                             </ span>
                             <span>
+                                <label htmlFor="district" hidden>Bairro</label>
                                 <DistrictInput id="district" placeholder="Bairro"/>
+
+                                <label htmlFor="city" hidden>Cidade</label>
                                 <CityInput id="city" placeholder="Cidade"/>
+                                
+                                <label htmlFor="uf" hidden>Estado</label>
                                 <UFInput id="uf" placeholder="UF"/>
                             </span>
                         </InputGrid>

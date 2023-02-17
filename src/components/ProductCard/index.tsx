@@ -2,15 +2,23 @@ import { CardContainer, PriceBar, Price, CountButtons } from './styles'
 import {Minus, Plus, ShoppingCartSimple} from 'phosphor-react'
 import coffee from '../../assets/coffees/expresso-tradicional.png'
 
-export function ProductCard() {
+export interface ProductCardProps{
+    image: string,
+    category: string,
+    name: string,
+    description: string,
+    price: number,
+}
+
+export function ProductCard({category, description, image, name, price}: ProductCardProps) {
     return (
         <CardContainer>
-            <img src={coffee} alt="" />
-            <span>tradicional</span>
-            <h2>Expresso Tradicional</h2>
-            <p>O tradicional café feito com água quente e grãos moídos</p>
+            <img src={image} alt="" />
+            <span>{category}</span>
+            <h2>{name}</h2>
+            <p>{description}</p>
             <PriceBar>
-                <Price><p>R$</p><p>9,90</p></Price>
+                <Price><p>R$</p><p>{price.toFixed(2).replace('.', ',')}</p></Price>
                 <CountButtons>
                     <button>
                         <Minus size={14} weight='bold'/>
