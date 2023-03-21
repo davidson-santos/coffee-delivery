@@ -23,7 +23,7 @@ import {
     RemoveButton,
     PContainer
 } from "./styles";
-// import { FormProvider, useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 // import { useState } from "react";
 import { MapPinLine, CurrencyDollar, CreditCard, Bank, Money, Minus, Plus, Trash } from 'phosphor-react'
 import expresso from '../../assets/coffees/expresso-tradicional.png'
@@ -34,11 +34,15 @@ export function Checkout(){
 
     // const [data, setData] = useState("");
 
-    // const { register, handleSubmit } = useForm();
+    const { register, handleSubmit } = useForm();
+    
+    function handleFinishOrderSubmit(data: any){
+        console.log(data)
+    }
 
     return (
         <CheckoutContainer>
-            <form>
+            <form onSubmit={handleSubmit(handleFinishOrderSubmit)}>
                 <OrderContainer>
                     <h1>Complete seu pedido</h1>
                     <Address>
@@ -53,27 +57,27 @@ export function Checkout(){
                         </CardTitle>
                         <InputGrid>
                             <label htmlFor="cep" hidden>CEP</label>
-                            <CEPInput id="cep" type="number" placeholder="CEP"/>
+                            <CEPInput id="cep" type="number" placeholder="CEP" {...register('cep')}/>
 
                             <label htmlFor="street" hidden>Rua</label>
-                            <StreetInput id="street" placeholder="Rua"/>
+                            <StreetInput id="street" placeholder="Rua" {...register('street')}/>
 
                             <span>
                                 <label htmlFor="houseNumber" hidden>Número da casa</label>
-                                <NumberInput id="houseNumber" placeholder="Número"/>
+                                <NumberInput id="houseNumber" placeholder="Número" {...register('houseNumber')}/>
 
                                 <label htmlFor="complement" hidden>Complemento</label>
-                                <ComplementInput id="complement" placeholder="Complemento"/>
+                                <ComplementInput id="complement" placeholder="Complemento" {...register('complement')}/>
                             </ span>
                             <span>
                                 <label htmlFor="district" hidden>Bairro</label>
-                                <DistrictInput id="district" placeholder="Bairro"/>
+                                <DistrictInput id="district" placeholder="Bairro" {...register('district')}/>
 
                                 <label htmlFor="city" hidden>Cidade</label>
-                                <CityInput id="city" placeholder="Cidade"/>
+                                <CityInput id="city" placeholder="Cidade" {...register('city')}/>
                                 
                                 <label htmlFor="uf" hidden>Estado</label>
-                                <UFInput id="uf" placeholder="UF"/>
+                                <UFInput id="uf" placeholder="UF" {...register('uf')}/>
                             </span>
                         </InputGrid>
                     </Address>
@@ -87,6 +91,7 @@ export function Checkout(){
                                 </span>
                             </span>
                             <PayOptions>
+                                {/* FAZER SISTEMA COM INPUT RADIO */}
                                 <PayButton>
                                     <CreditCard size={16}/>
                                     <p>CARTÃO DE CRÉDITO</p>
@@ -180,7 +185,7 @@ export function Checkout(){
                                 <h2>R$ 33,20</h2>
                             </span>
                         </Price>
-                        <button><p>CONFIRMAR PEDIDO</p></button>
+                        <button type="submit"><p>CONFIRMAR PEDIDO</p></button>
                     </Cart>
                 </CartContainer>
             </form>

@@ -7,15 +7,27 @@ import packageIcon from  '../../assets/list-package.svg'
 import bannerImage from  '../../assets/banner-image.svg'
 import { ProductCard, ProductCardProps } from '../../components/ProductCard'
 import { coffeList } from './coffeList'
+import { useState } from 'react'
+
+
 
 
 export function Home(){
 
-    
-
-    function listProducts(list: ProductCardProps[]){
-
+    interface ItemStore {
+        id: string,
+        quantity: number,
     }
+
+    const [coffeeItemStore, newCoffeeItemStore]  = useState([{id:'', quantity: 0}])
+
+    // function listProducts(list: ProductCardProps[]){
+    //     const newlist = list.map( item => )
+    // }
+
+    // newCoffeeItemStore()
+
+
 
     return (
         <HomeContainer>
