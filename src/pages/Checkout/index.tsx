@@ -28,16 +28,32 @@ import { useForm } from 'react-hook-form'
 import { MapPinLine, CurrencyDollar, CreditCard, Bank, Money, Minus, Plus, Trash } from 'phosphor-react'
 import expresso from '../../assets/coffees/expresso-tradicional.png'
 import latte from '../../assets/coffees/latte.png'
+import { useNavigate } from "react-router-dom";
+import * as zod from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 
 export function Checkout(){
 
+    const checkoutValidationSchema = zod.object({
+        cep: zod.string().min(5, 'CEP'),
+        street: zod.string(),
+        houseNumber: zod.string(),
+        complement: zod.string(),
+        district: zod.string(),
+        city: zod.string(),
+        uf: zod.string(),
+    })
     // const [data, setData] = useState("");
 
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit } = useForm({
+        resolver:zodResolver(checkoutValidationSchema)
+    });
+
+    const navigate = useNavigate()
     
     function handleFinishOrderSubmit(data: any){
-        console.log(data)
+        navigate('/finished')
     }
 
     return (

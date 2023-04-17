@@ -18,8 +18,8 @@ export const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
     }
 
-    body, header {
-        /* padding: 0 10rem; */
+    header, body {
+        padding: 0 10rem;
 
     }
 
