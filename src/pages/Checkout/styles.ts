@@ -150,9 +150,18 @@ export const PayOptions = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 0.75rem;
+
+    input {
+       /* appearance: none; */
+        display: none;
+    }
+    input:checked + label {
+        box-shadow: 0 0 0 2px ${(props) => props.theme.purple};
+    }
+
 `
 
-export const PayButton = styled.button`
+export const PayButton = styled.label`
     display: flex;
     align-items: center;
     justify-content: center;

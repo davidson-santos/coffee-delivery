@@ -37,12 +37,13 @@ export function Checkout(){
 
     const checkoutValidationSchema = zod.object({
         cep: zod.string().min(5, 'CEP'),
-        street: zod.string(),
-        houseNumber: zod.string(),
+        street: zod.string().min(1),
+        houseNumber: zod.string().min(1),
         complement: zod.string(),
-        district: zod.string(),
-        city: zod.string(),
-        uf: zod.string(),
+        district: zod.string().min(1),
+        city: zod.string().min(1),
+        uf: zod.string().min(2).max(2),
+        payoption: zod.string(),
     })
     // const [data, setData] = useState("");
 
@@ -72,6 +73,7 @@ export function Checkout(){
                             </span>
                         </CardTitle>
                         <InputGrid>
+                            
                             <label htmlFor="cep" hidden>CEP</label>
                             <CEPInput id="cep" type="number" placeholder="CEP" {...register('cep')}/>
 
@@ -106,20 +108,24 @@ export function Checkout(){
                                     <p>O pagamento é feito na entrega. Escolha a forma que deseja pagar</p>
                                 </span>
                             </span>
-                            <PayOptions>
-                                {/* FAZER SISTEMA COM INPUT RADIO */}
-                                <PayButton>
-                                    <CreditCard size={16}/>
-                                    <p>CARTÃO DE CRÉDITO</p>
-                                </PayButton>
-                                <PayButton>
-                                    <Bank size={16}/>
-                                    <p>CARTÃO DE DÉBITO</p>
-                                </PayButton>
-                                <PayButton>
-                                    <Money size={16}/>
-                                    <p>DINHEIRO</p>
-                                </PayButton>
+                            <PayOptions>                                                         
+                                <input id="credit" type="radio" value='1' {...register("payoption")} />
+                                    <PayButton htmlFor="credit">
+                                        <CreditCard size={16}/>
+                                        <p>CARTÃO DE CRÉDITO</p>
+                                    </PayButton>
+
+                                <input id="debit" type="radio" value='2' {...register("payoption")} />                                        
+                                    <PayButton htmlFor="debit">
+                                        <Bank size={16}/>
+                                        <p>CARTÃO DE DÉBITO</p>
+                                  </PayButton>
+                                  
+                                <input id="money" type="radio" value='3' {...register("payoption")} />                                        
+                                    <PayButton htmlFor="money">
+                                        <Money size={16}/>
+                                        <p>DINHEIRO</p>
+                                    </PayButton>
                             </PayOptions>
                         </CardTitle>
                     </Payment>
